@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b431bcbfff98e04e862c051e75e74bd, type: 3}
+  m_Name: Barrrier
+  m_EditorClassIdentifier: 
+  name: Barrier
+  desciption: Block damage fron incoming attack for a period
+  image: {fileID: 21300000, guid: 8fbefb9175d7f4c4bb898397da28766e, type: 3}
+  effectType: 0
