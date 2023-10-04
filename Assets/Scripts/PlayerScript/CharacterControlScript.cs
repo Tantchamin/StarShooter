@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class CharacterControlScript : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rigidbody;
+    [SerializeField] private Rigidbody2D _rigidbody;
 
     [SerializeField] private float moveSpeed;
 
@@ -51,7 +51,7 @@ public class CharacterControlScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rigidbody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        _rigidbody.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
 
     private void FireNormalBullet(InputAction.CallbackContext context)
