@@ -2420,10 +2420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 1580382916}
-  moveSpeed: 5
-  move: {fileID: -8544659572881475736, guid: 62cb334228c646943ba882905dc2ee37, type: 3}
-  fireNormal: {fileID: -4341903693214288801, guid: 62cb334228c646943ba882905dc2ee37, type: 3}
-  fireSpecial: {fileID: -1703080161508621024, guid: 62cb334228c646943ba882905dc2ee37, type: 3}
+  moveSpeed: 12
 --- !u!1 &1600162427
 GameObject:
   m_ObjectHideFlags: 0
