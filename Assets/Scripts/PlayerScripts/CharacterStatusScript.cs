@@ -30,4 +30,14 @@ public class CharacterStatusScript : MonoBehaviour
         return missileDamage;
     }
 
+    public void HealthPointAdjust(float point)
+    {
+        healthPoint += point;
+    }
+
+    public float GetHealthPoint()
+    {
+        return healthPoint;
+    }
+
 }
