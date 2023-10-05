@@ -9,6 +9,10 @@ public class CharacterControlScript : MonoBehaviour
 
     [SerializeField] private float moveSpeed;
 
+    [SerializeField] private List<GameObject> bulletList;
+
+    [SerializeField] private List<GameObject> shootPoints;
+
     private PlayerControls _playerControl;
 
     private Vector2 moveDirection;
@@ -57,11 +61,14 @@ public class CharacterControlScript : MonoBehaviour
     private void FireNormalBullet(InputAction.CallbackContext context)
     {
         Debug.Log("Fire!!");
+        Instantiate(bulletList[0], shootPoints[0].transform.position, shootPoints[0].transform.rotation);
+        
     }
 
     private void FireSpecialBullet(InputAction.CallbackContext context)
     {
         Debug.Log("Fire Special!!");
+        Instantiate(bulletList[1], shootPoints[0].transform.position, shootPoints[0].transform.rotation);
     }
 
 }
