@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class CharacterStatusScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float healthPoint = 3;
+    [SerializeField] private float bulletDamage = 1;
+    [SerializeField] private float missileDamage = 10;
+
+    public void BulletDamageAdjust(float damage)
     {
-        
+        if(bulletDamage < 10)
+            bulletDamage += damage;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MissileDamageAdjust(float damage)
     {
-        
+        if(missileDamage < 30)
+            missileDamage += damage;
     }
+
+    public float GetBulletDamage()
+    {
+        return bulletDamage;
+    }
+
+    public float GetMissileDamage()
+    {
+        return missileDamage;
+    }
+
 }

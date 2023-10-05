@@ -787,6 +787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 569883890}
+  cardEffect: {fileID: 1370323902}
 --- !u!1 &775431125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,6 +1997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 1267958420}
+  cardEffect: {fileID: 1370323902}
 --- !u!1 &1370323899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,6 +2008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1370323901}
   - component: {fileID: 1370323900}
+  - component: {fileID: 1370323902}
   m_Layer: 0
   m_Name: CardsList
   m_TagString: Untagged
@@ -2054,6 +2057,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1370323902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370323899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461c551c599c1d4498a5a9ed51c89160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterStatusScript: {fileID: 1580382920}
 --- !u!1 &1478599706
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,6 +2498,7 @@ GameObject:
   - component: {fileID: 1580382916}
   - component: {fileID: 1580382917}
   - component: {fileID: 1580382918}
+  - component: {fileID: 1580382920}
   - component: {fileID: 1580382919}
   m_Layer: 0
   m_Name: Player
@@ -2604,6 +2621,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.57}
   m_EdgeRadius: 0
+--- !u!114 &1580382920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580382914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a80a8e69a8be5994fb0047a8819ad88f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoint: 3
+  bulletDamage: 1
+  missileDamage: 10
 --- !u!1 &1600162427
 GameObject:
   m_ObjectHideFlags: 0
@@ -3588,6 +3620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 1968195389}
+  cardEffect: {fileID: 1370323902}
 --- !u!1 &1989467573
 GameObject:
   m_ObjectHideFlags: 0

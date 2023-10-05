@@ -5,28 +5,29 @@ using UnityEngine;
 public class ChooseCardEffect : MonoBehaviour
 {
     [SerializeField] private DisplayCard card;
+    [SerializeField] private CardEffect cardEffect;
 
     public void ChooseCard()
     {
         switch (card.card.effectType)
         {
             case Card.EffectType.Barrier:
-                Debug.Log("Barrier");
+                cardEffect.BarrierEffect();
                 break;
             case Card.EffectType.Bullet:
-                Debug.Log("Bullet");
+                cardEffect.BulletEffect();
                 break;
             case Card.EffectType.GlassCannon:
-                Debug.Log("GlassCannon");
+                cardEffect.GlassCannonEffect();
                 break;
             case Card.EffectType.GoldenMissile:
-                Debug.Log("GoldenMissile");
+                cardEffect.GoldenMissileEffect();
                 break;
             case Card.EffectType.Missile:
-                Debug.Log("Missile");
+                cardEffect.MissileEffect();
                 break;
             case Card.EffectType.Repair:
-                Debug.Log("Repair");
+                cardEffect.RepairEffect();
                 break;
         }
         

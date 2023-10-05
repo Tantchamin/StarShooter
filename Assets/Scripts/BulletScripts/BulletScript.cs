@@ -6,11 +6,19 @@ public class BulletScript : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float bulletDamage;
+    private CharacterStatusScript characterStatusScript;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        characterStatusScript = GameObject.Find("Player").GetComponent<CharacterStatusScript>();
+        if (gameObject.CompareTag("Bullet"))
+        {
+            bulletDamage = characterStatusScript.GetBulletDamage();
+        }
+        else
+        {
+            bulletDamage = characterStatusScript.GetMissileDamage();
+        }
     }
 
     // Update is called once per frame

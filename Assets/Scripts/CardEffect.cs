@@ -2,19 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CardEffect", menuName = "CreateEffect")]
-
-public class CardEffect : ScriptableObject
+public class CardEffect : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private CharacterStatusScript characterStatusScript;
+
+    public void BarrierEffect()
     {
-        
+        Debug.Log("Barrier");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void BulletEffect()
     {
-        
+        characterStatusScript.BulletDamageAdjust(1);
+        Debug.Log("Bullet");
     }
+
+    public void MissileEffect()
+    {
+        Debug.Log("Missile");
+    }
+
+    public void GoldenMissileEffect()
+    {
+        characterStatusScript.MissileDamageAdjust(10);
+        Debug.Log("GoldenMissile");
+    }
+
+    public void GlassCannonEffect()
+    {
+        Debug.Log("GlassCannon");
+    }
+
+    public void RepairEffect()
+    {
+        Debug.Log("Repair");
+    }
+
 }
