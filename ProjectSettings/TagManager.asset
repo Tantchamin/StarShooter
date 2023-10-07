@@ -7,6 +7,8 @@ TagManager:
   - Bullet
   - Border
   - Missile
+  - MainCanvas
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -41,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 3782368955
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

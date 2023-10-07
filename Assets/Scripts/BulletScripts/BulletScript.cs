@@ -34,4 +34,9 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public float GetBulletDamage()
+    {
+        return bulletDamage;
+    }
 }
