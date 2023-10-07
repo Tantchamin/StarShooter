@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Super Bullet
   desciption: Bullet damage +1 (Max 10)
-  image: {fileID: 21300000, guid: c400e76d2356bdf458f69732aec593dc, type: 3}
+  image: {fileID: 21300000, guid: 2bd4d312b7579d5488cc720dbb1b0ce5, type: 3}
   effectType: 1

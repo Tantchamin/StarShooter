@@ -13,13 +13,13 @@ public class CharacterControlScript : MonoBehaviour
 
     [SerializeField] private List<GameObject> shootPoints;
 
+    [SerializeField] private CharacterStatusScript characterStatusScript;
+
     private PlayerControls _playerControl;
 
     private Vector2 moveDirection;
 
     private InputAction move, fireNormal, fireSpecial;
-
-    //[SerializeField] private InputActionReference move, fireNormal, fireSpecial;
 
     private void Awake()
     {
@@ -68,7 +68,12 @@ public class CharacterControlScript : MonoBehaviour
     private void FireSpecialBullet(InputAction.CallbackContext context)
     {
         Debug.Log("Fire Special!!");
-        Instantiate(bulletList[1], shootPoints[0].transform.position, shootPoints[0].transform.rotation);
+        if(characterStatusScript.GetMissileAmount() != 0)
+        {
+            Instantiate(bulletList[1], shootPoints[0].transform.position, shootPoints[0].transform.rotation);
+            characterStatusScript.MissileAmountAdjust(-1);
+        }
+
     }
 
 }

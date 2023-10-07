@@ -7,11 +7,24 @@ public class CharacterStatusScript : MonoBehaviour
     [SerializeField] private float healthPoint = 3;
     [SerializeField] private float bulletDamage = 1;
     [SerializeField] private float missileDamage = 10;
+    [SerializeField] private float missileAmount = 3;
 
     public void BulletDamageAdjust(float damage)
     {
         if(bulletDamage < 10)
             bulletDamage += damage;
+    }
+
+    public void MissileAmountAdjust(float amount)
+    {
+        if (amount == 3)
+        {
+            missileAmount = 3;
+        }
+        else
+        {
+            missileAmount += amount;
+        }
     }
 
     public void MissileDamageAdjust(float damage)
@@ -28,6 +41,11 @@ public class CharacterStatusScript : MonoBehaviour
     public float GetMissileDamage()
     {
         return missileDamage;
+    }
+
+    public float GetMissileAmount()
+    {
+        return missileAmount;
     }
 
     public void HealthPointAdjust(float point)

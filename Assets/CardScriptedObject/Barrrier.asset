@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Barrier
   desciption: Block damage fron incoming attack for a period
-  image: {fileID: 21300000, guid: 8fbefb9175d7f4c4bb898397da28766e, type: 3}
+  image: {fileID: 21300000, guid: aa967079b58b1a84ab7a2fcfc186e8ad, type: 3}
   effectType: 0
