@@ -6,6 +6,7 @@ public class RandomCard : MonoBehaviour
 {
     CardsListManager cardList;
     public List<DisplayCard> cards;
+    [SerializeField] private GameObject cardsFolderDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -24,5 +25,6 @@ public class RandomCard : MonoBehaviour
             cards[i].card = cardList.cardsList[rand];
             cards[i].CardUpdate();
         }
+        cardsFolderDisplay.SetActive(false);
     }
 }

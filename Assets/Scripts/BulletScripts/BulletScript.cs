@@ -11,7 +11,7 @@ public class BulletScript : MonoBehaviour
     private void Awake()
     {
         characterStatusScript = GameObject.Find("Player").GetComponent<CharacterStatusScript>();
-        if (gameObject.CompareTag("Bullet"))
+        if (this.gameObject.CompareTag("Bullet"))
         {
             bulletDamage = characterStatusScript.GetBulletDamage();
         }
@@ -25,5 +25,13 @@ public class BulletScript : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(0, moveSpeed*Time.deltaTime, 0);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Border"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

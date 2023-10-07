@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 15238918}
   m_Layer: 0
   m_Name: RightBorder
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1977,7 +1977,7 @@ GameObject:
   - component: {fileID: 1254587369}
   m_Layer: 0
   m_Name: LeftBorder
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3003,7 +3003,7 @@ GameObject:
   - component: {fileID: 1692020217}
   m_Layer: 0
   m_Name: UpBorder
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4028,6 +4028,7 @@ MonoBehaviour:
   - {fileID: 569883890}
   - {fileID: 1968195389}
   - {fileID: 1267958420}
+  cardsFolderDisplay: {fileID: 1438063074}
 --- !u!1 &2017919816
 GameObject:
   m_ObjectHideFlags: 0
@@ -4175,7 +4176,7 @@ GameObject:
   - component: {fileID: 2131283986}
   m_Layer: 0
   m_Name: DownBorder
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
