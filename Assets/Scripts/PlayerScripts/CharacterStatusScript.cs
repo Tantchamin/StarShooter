@@ -8,6 +8,8 @@ public class CharacterStatusScript : MonoBehaviour
     [SerializeField] private float bulletDamage = 1;
     [SerializeField] private float missileDamage = 10;
     [SerializeField] private float missileAmount = 3;
+    [SerializeField] private float cardMaxValue = 10;
+    [SerializeField] private float cardValue = 0;
 
     public void BulletDamageAdjust(float damage)
     {
@@ -33,6 +35,11 @@ public class CharacterStatusScript : MonoBehaviour
             missileDamage += damage;
     }
 
+    public void CardValueAdjust(float amount)
+    {
+        cardValue += amount;
+    }
+
     public float GetBulletDamage()
     {
         return bulletDamage;
@@ -56,6 +63,16 @@ public class CharacterStatusScript : MonoBehaviour
     public float GetHealthPoint()
     {
         return healthPoint;
+    }
+
+    public float GetCardValue()
+    {
+        return cardValue;
+    }
+
+    public float GetCardMaxValue()
+    {
+        return cardMaxValue;
     }
 
 }

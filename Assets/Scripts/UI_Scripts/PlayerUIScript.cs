@@ -11,11 +11,6 @@ public class PlayerUIScript : MonoBehaviour
     [SerializeField] private TMP_Text bulletDamage, missileDamage;
     [SerializeField] private CharacterStatusScript characterStatusScript;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -83,4 +78,5 @@ public class PlayerUIScript : MonoBehaviour
             missileAmount[2].color = new Color(255, 255, 255);
         }
     }
+
 }

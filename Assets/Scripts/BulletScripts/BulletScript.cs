@@ -33,6 +33,10 @@ public class BulletScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else if (collision.CompareTag("Enemy"))
+        {
+            characterStatusScript.CardValueAdjust(1);
+        }
     }
 
     public float GetBulletDamage()
