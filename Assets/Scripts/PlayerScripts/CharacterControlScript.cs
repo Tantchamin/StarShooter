@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class CharacterControlScript : MonoBehaviour
 {
@@ -15,11 +16,15 @@ public class CharacterControlScript : MonoBehaviour
 
     [SerializeField] private CharacterStatusScript characterStatusScript;
 
+    [SerializeField] private List<Button> cardButton;
+
+    [SerializeField] private GameObject cardFolder;
+
     private PlayerControls _playerControl;
 
     private Vector2 moveDirection;
 
-    private InputAction move, fireNormal, fireSpecial;
+    private InputAction move, fireNormal, fireSpecial, selectCard1, selectCard2, selectCard3;
 
     private void Awake()
     {
@@ -38,6 +43,18 @@ public class CharacterControlScript : MonoBehaviour
         fireSpecial = _playerControl.Player.FireSpecial;
         fireSpecial.Enable();
         fireSpecial.performed += FireSpecialBullet;
+
+        selectCard1 = _playerControl.Player.SelectCard1;
+        selectCard1.Enable();
+        selectCard1.performed += Card1Select;
+
+        selectCard2 = _playerControl.Player.SelectCard2;
+        selectCard2.Enable();
+        selectCard2.performed += Card2Select;
+
+        selectCard3 = _playerControl.Player.SelectCard3;
+        selectCard3.Enable();
+        selectCard3.performed += Card3Select;
     }
 
     private void OnDisable()
@@ -74,6 +91,32 @@ public class CharacterControlScript : MonoBehaviour
             characterStatusScript.MissileAmountAdjust(-1);
         }
 
+    }
+
+    private void Card1Select(InputAction.CallbackContext context)
+    {
+        if (cardFolder.activeSelf)
+        {
+            cardButton[0].onClick.Invoke();
+        }
+
+    }
+
+    private void Card2Select(InputAction.CallbackContext context)
+    {
+        if (cardFolder.activeSelf)
+        {
+            cardButton[1].onClick.Invoke();
+        }
+
+    }
+
+    private void Card3Select(InputAction.CallbackContext context)
+    {
+        if(cardFolder.activeSelf)
+        {
+            cardButton[2].onClick.Invoke();
+        }
     }
 
 }

@@ -6014,6 +6014,11 @@ MonoBehaviour:
   shootPoints:
   - {fileID: 309422041}
   characterStatusScript: {fileID: 1580382920}
+  cardButton:
+  - {fileID: 487077430}
+  - {fileID: 1155108258}
+  - {fileID: 1478599708}
+  cardFolder: {fileID: 1438063074}
 --- !u!61 &1580382919
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6056,7 +6061,7 @@ MonoBehaviour:
   bulletDamage: 1
   missileDamage: 10
   missileAmount: 3
-  cardMaxValue: 10
+  cardMaxValue: 30
   cardValue: 0
 --- !u!212 &1580382921
 SpriteRenderer:

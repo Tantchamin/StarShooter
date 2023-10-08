@@ -31,7 +31,7 @@ public class CharacterStatusScript : MonoBehaviour
 
     public void MissileDamageAdjust(float damage)
     {
-        if(missileDamage < 30)
+        if(missileDamage < 50)
             missileDamage += damage;
     }
 

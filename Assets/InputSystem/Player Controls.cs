@@ -53,6 +53,33 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectCard1"",
+                    ""type"": ""Button"",
+                    ""id"": ""8b660a32-ffe0-4691-9da9-aab78d8937da"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectCard2"",
+                    ""type"": ""Button"",
+                    ""id"": ""aa1b6bfb-faca-48ff-9e1c-448b8267f673"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectCard3"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad15cae0-92b4-4ef5-bff3-d15217e98bf1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +159,39 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""FireSpecial"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""67213289-97a4-475e-8ed1-698d477ffbc2"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectCard1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bbac7d1c-a76f-4e62-b3fc-0d4489ec4e56"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectCard2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""56f9d74b-c732-479f-a7fd-f58a5d2dd2ae"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectCard3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -155,6 +215,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_FireNormal = m_Player.FindAction("FireNormal", throwIfNotFound: true);
         m_Player_FireSpecial = m_Player.FindAction("FireSpecial", throwIfNotFound: true);
+        m_Player_SelectCard1 = m_Player.FindAction("SelectCard1", throwIfNotFound: true);
+        m_Player_SelectCard2 = m_Player.FindAction("SelectCard2", throwIfNotFound: true);
+        m_Player_SelectCard3 = m_Player.FindAction("SelectCard3", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -219,6 +282,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_FireNormal;
     private readonly InputAction m_Player_FireSpecial;
+    private readonly InputAction m_Player_SelectCard1;
+    private readonly InputAction m_Player_SelectCard2;
+    private readonly InputAction m_Player_SelectCard3;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -226,6 +292,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @FireNormal => m_Wrapper.m_Player_FireNormal;
         public InputAction @FireSpecial => m_Wrapper.m_Player_FireSpecial;
+        public InputAction @SelectCard1 => m_Wrapper.m_Player_SelectCard1;
+        public InputAction @SelectCard2 => m_Wrapper.m_Player_SelectCard2;
+        public InputAction @SelectCard3 => m_Wrapper.m_Player_SelectCard3;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -244,6 +313,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @FireSpecial.started += instance.OnFireSpecial;
             @FireSpecial.performed += instance.OnFireSpecial;
             @FireSpecial.canceled += instance.OnFireSpecial;
+            @SelectCard1.started += instance.OnSelectCard1;
+            @SelectCard1.performed += instance.OnSelectCard1;
+            @SelectCard1.canceled += instance.OnSelectCard1;
+            @SelectCard2.started += instance.OnSelectCard2;
+            @SelectCard2.performed += instance.OnSelectCard2;
+            @SelectCard2.canceled += instance.OnSelectCard2;
+            @SelectCard3.started += instance.OnSelectCard3;
+            @SelectCard3.performed += instance.OnSelectCard3;
+            @SelectCard3.canceled += instance.OnSelectCard3;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -257,6 +335,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @FireSpecial.started -= instance.OnFireSpecial;
             @FireSpecial.performed -= instance.OnFireSpecial;
             @FireSpecial.canceled -= instance.OnFireSpecial;
+            @SelectCard1.started -= instance.OnSelectCard1;
+            @SelectCard1.performed -= instance.OnSelectCard1;
+            @SelectCard1.canceled -= instance.OnSelectCard1;
+            @SelectCard2.started -= instance.OnSelectCard2;
+            @SelectCard2.performed -= instance.OnSelectCard2;
+            @SelectCard2.canceled -= instance.OnSelectCard2;
+            @SelectCard3.started -= instance.OnSelectCard3;
+            @SelectCard3.performed -= instance.OnSelectCard3;
+            @SelectCard3.canceled -= instance.OnSelectCard3;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -288,5 +375,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnFireNormal(InputAction.CallbackContext context);
         void OnFireSpecial(InputAction.CallbackContext context);
+        void OnSelectCard1(InputAction.CallbackContext context);
+        void OnSelectCard2(InputAction.CallbackContext context);
+        void OnSelectCard3(InputAction.CallbackContext context);
     }
 }

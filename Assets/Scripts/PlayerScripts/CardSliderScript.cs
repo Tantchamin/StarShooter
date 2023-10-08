@@ -12,6 +12,7 @@ public class CardSliderScript : MonoBehaviour
     void Start()
     {
         cardSlider.value = characterStatusScript.GetCardValue();
+        cardSlider.maxValue = characterStatusScript.GetCardMaxValue();
     }
 
     // Update is called once per frame

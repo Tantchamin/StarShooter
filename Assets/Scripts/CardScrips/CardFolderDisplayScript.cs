@@ -18,7 +18,7 @@ public class CardFolderDisplayScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(characterStatusScript.GetCardValue() >= 10)
+        if(characterStatusScript.GetCardValue() >= characterStatusScript.GetCardMaxValue())
         {
             cardFolder.SetActive(true);
             characterControlScript.enabled = false;
