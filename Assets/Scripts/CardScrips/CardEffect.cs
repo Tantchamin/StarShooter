@@ -17,24 +17,28 @@ public class CardEffect : MonoBehaviour
     {
         barrier.SetActive(true);
         StartCoroutine(BarrierEndTime());
+        characterStatusScript.CardValueAdjust(-10);
         Debug.Log("Barrier");
     }
 
     public void BulletEffect()
     {
         characterStatusScript.BulletDamageAdjust(1);
+        characterStatusScript.CardValueAdjust(-10);
         Debug.Log("Bullet");
     }
 
     public void MissileEffect()
     {
         characterStatusScript.MissileAmountAdjust(3);
+        characterStatusScript.CardValueAdjust(-10);
         Debug.Log("MissileReload");
     }
 
     public void GoldenMissileEffect()
     {
         characterStatusScript.MissileDamageAdjust(10);
+        characterStatusScript.CardValueAdjust(-10);
         Debug.Log("GoldenMissile");
     }
 
@@ -45,12 +49,14 @@ public class CardEffect : MonoBehaviour
             characterStatusScript.HealthPointAdjust(-1);
             characterStatusScript.BulletDamageAdjust(5);
         }
+        characterStatusScript.CardValueAdjust(-10);
         Debug.Log("GlassCannon");
     }
 
     public void RepairEffect()
     {
         characterStatusScript.HealthPointAdjust(1);
+        characterStatusScript.CardValueAdjust(-10);
         Debug.Log("Repair");
     }
 
