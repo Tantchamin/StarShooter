@@ -833,6 +833,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &322257157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 322257158}
+  - component: {fileID: 322257159}
+  m_Layer: 0
+  m_Name: SpiralShootPoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &322257158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322257157}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2, y: -0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1018616920}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &322257159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322257157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd62b90d59d6c574aad4cb9b8c63d680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4522652083057292684, guid: ba07df502ed914541b8cb4ed5bbbc838, type: 3}
+  fireRate: 0.2
+  angle: 0
+  anglePlus: 20
 --- !u!1 &322971076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,6 +2678,7 @@ GameObject:
   - component: {fileID: 840716834}
   - component: {fileID: 840716835}
   - component: {fileID: 840716836}
+  - component: {fileID: 840716837}
   m_Layer: 0
   m_Name: EnemySprite
   m_TagString: Untagged
@@ -2725,6 +2774,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &840716837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840716833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959b2554d6ae89f43ba6d31d343ac8a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStatusScript: {fileID: 132825111}
+  circlePattern: {fileID: 973326017}
+  spiralPatterm: {fileID: 322257159}
+  spiralShootPoints:
+  - {fileID: 322257157}
+  - {fileID: 1373593094}
 --- !u!1 &843323934
 GameObject:
   m_ObjectHideFlags: 0
@@ -3557,8 +3624,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 973326016}
+  - component: {fileID: 973326017}
   m_Layer: 0
-  m_Name: ShootPoint1
+  m_Name: CircleShootPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3579,6 +3647,23 @@ Transform:
   m_Father: {fileID: 1018616920}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &973326017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973326015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca0e1f839ff723438d18c6e802e25b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnAmount: 10
+  bullet: {fileID: 4522652083057292684, guid: ba07df502ed914541b8cb4ed5bbbc838, type: 3}
+  startAngle: 90
+  EndAngle: 270
+  fireRate: 1
 --- !u!1 &978798003
 GameObject:
   m_ObjectHideFlags: 0
@@ -3819,6 +3904,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 973326016}
+  - {fileID: 322257158}
+  - {fileID: 1373593095}
   m_Father: {fileID: 132825106}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4988,6 +5075,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1223ffb289eaf7b48ba5242f783f4b7b, type: 2}
   - {fileID: 11400000, guid: 60429dfa2364dad4aaaf64d09436b279, type: 2}
   - {fileID: 11400000, guid: 45b3918114a151c49a0cfd9eae2c83eb, type: 2}
+  - {fileID: 11400000, guid: 7397347c103cd8f469c941e57b076467, type: 2}
 --- !u!4 &1370323901
 Transform:
   m_ObjectHideFlags: 0
@@ -5018,6 +5106,54 @@ MonoBehaviour:
   characterStatusScript: {fileID: 1580382920}
   barrier: {fileID: 811961095}
   barrierTime: 5
+--- !u!1 &1373593094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1373593095}
+  - component: {fileID: 1373593096}
+  m_Layer: 0
+  m_Name: SpiralShootPoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1373593095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373593094}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2, y: -0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1018616920}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1373593096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373593094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd62b90d59d6c574aad4cb9b8c63d680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4522652083057292684, guid: ba07df502ed914541b8cb4ed5bbbc838, type: 3}
+  fireRate: 0.2
+  angle: 0
+  anglePlus: -20
 --- !u!1 &1438063074
 GameObject:
   m_ObjectHideFlags: 0

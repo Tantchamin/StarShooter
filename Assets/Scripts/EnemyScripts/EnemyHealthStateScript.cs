@@ -4,19 +4,28 @@ using UnityEngine;
 
 public class EnemyHealthStateScript : MonoBehaviour
 {
-    EnemyStatusScript enemyStatusScript;
-    EnemySpawnBulletCirclePattern circlePattern;
-    EnemySpawnBulletSpiralPattern spiralPatterm;
+    [SerializeField] EnemyStatusScript enemyStatusScript;
+    [SerializeField] EnemySpawnBulletCirclePattern circlePattern;
+    [SerializeField] EnemySpawnBulletSpiralPattern spiralPatterm;
+
+    [SerializeField] List<GameObject> spiralShootPoints;
+
     Animator anim;
     private bool isStage2 = true, isStage3 = true;
+
+    private void Awake()
+    {
+        ShootPointsIsEnable(false);
+        //spiralPatterm.enabled = false;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        enemyStatusScript = GetComponent<EnemyStatusScript>();
-        circlePattern = GetComponent<EnemySpawnBulletCirclePattern>();
-        spiralPatterm = GetComponent<EnemySpawnBulletSpiralPattern>();
-        spiralPatterm.enabled = false;
+        //enemyStatusScript = GetComponent<EnemyStatusScript>();
+        //circlePattern = GetComponent<EnemySpawnBulletCirclePattern>();
+        //spiralPatterm = GetComponent<EnemySpawnBulletSpiralPattern>();
+        
 
         anim = GetComponent<Animator>();
     }
@@ -34,8 +43,9 @@ public class EnemyHealthStateScript : MonoBehaviour
         }
         else if (enemyStatusScript.GetHealthPoint() <= (enemyStatusScript.GetMaxHealthPoint() * 60) / 100 && enemyStatusScript.GetHealthPoint() > (enemyStatusScript.GetMaxHealthPoint() * 30) / 100)
         {
+            ShootPointsIsEnable(true);
             AnimationSetBool("isStage2", isStage2);
-            spiralPatterm.enabled = true;
+            //spiralPatterm.enabled = true;
         }
         else if (enemyStatusScript.GetHealthPoint() <= (enemyStatusScript.GetMaxHealthPoint() * 30) / 100)
         {
@@ -47,5 +57,13 @@ public class EnemyHealthStateScript : MonoBehaviour
     void AnimationSetBool(string parameterName, bool parameterBool)
     {
         anim.SetBool(parameterName, parameterBool);
+    }
+
+    void ShootPointsIsEnable(bool isEnable)
+    {
+        for (int i = 0; i < spiralShootPoints.Count; i++)
+        {
+            spiralShootPoints[i].GetComponent<EnemySpawnBulletSpiralPattern>().enabled = isEnable;
+        }
     }
 }

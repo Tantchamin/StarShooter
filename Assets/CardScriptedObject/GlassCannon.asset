@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GlassCannon
   m_EditorClassIdentifier: 
   name: Glass Cannon
-  desciption: HP -1 but increase bullet damage by 5 (Max 10) (Cannot use when HP
+  desciption: HP -1 but increase bullet damage by 5 (Max 20) (Cannot use when HP
     is 1)
   image: {fileID: 21300000, guid: 108ad51099fff644f98f9e6ec5c28508, type: 3}
   effectType: 2
