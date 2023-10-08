@@ -246,6 +246,7 @@ GameObject:
   - component: {fileID: 132825109}
   - component: {fileID: 132825108}
   - component: {fileID: 132825111}
+  - component: {fileID: 132825112}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -361,8 +362,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoint: 0
-  maxHealthPoint: 500
+  maxHealthPoint: 600
   healthBar: {fileID: 5639464711033958900, guid: 37fa6dcafccc55143ad6f3c409bbddbd, type: 3}
+--- !u!114 &132825112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132825105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bcc239b6eec529418a8349fdda33dcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2.5
+  moveRange: 6.5
 --- !u!1 &197660702
 GameObject:
   m_ObjectHideFlags: 0
@@ -3718,7 +3733,7 @@ MonoBehaviour:
   bullet: {fileID: 4522652083057292684, guid: ba07df502ed914541b8cb4ed5bbbc838, type: 3}
   startAngle: 90
   EndAngle: 270
-  fireRate: 1
+  fireRate: 2
 --- !u!1 &978798003
 GameObject:
   m_ObjectHideFlags: 0

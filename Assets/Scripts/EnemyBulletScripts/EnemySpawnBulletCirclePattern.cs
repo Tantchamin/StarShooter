@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemySpawnBulletCirclePattern : MonoBehaviour
 {
-    public int bulletSpawnAmount = 10;
-    public GameObject bullet;
+    [SerializeField] private byte bulletSpawnAmount = 10;
+    [SerializeField] private GameObject bullet;
 
-    public float startAngle = 90f;
-    public float EndAngle = 270f;
-    public float fireRate = 1f;
+    [SerializeField] private float startAngle = 90f;
+    [SerializeField] private float EndAngle = 270f;
+    [SerializeField] private float fireRate = 1f;
 
     private Vector2 bulletMoveDirection;
 
@@ -38,6 +38,11 @@ public class EnemySpawnBulletCirclePattern : MonoBehaviour
             angle += angleStep;
 
         }
+    }
+
+    public void FireRateAdjust(float newFireRate)
+    {
+        fireRate = newFireRate;
     }
 
 }

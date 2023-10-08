@@ -50,6 +50,8 @@ public class EnemyHealthStateScript : MonoBehaviour
         else if (enemyStatusScript.GetHealthPoint() <= (enemyStatusScript.GetMaxHealthPoint() * 30) / 100)
         {
             AnimationSetBool("isStage3", isStage3);
+            circlePattern.FireRateAdjust(1);
+            SpiralShootRateAdjust(0.1f);
         }
 
     }
@@ -64,6 +66,14 @@ public class EnemyHealthStateScript : MonoBehaviour
         for (int i = 0; i < spiralShootPoints.Count; i++)
         {
             spiralShootPoints[i].GetComponent<EnemySpawnBulletSpiralPattern>().enabled = isEnable;
+        }
+    }
+
+    void SpiralShootRateAdjust(float newFireRate)
+    {
+        for (int i = 0; i < spiralShootPoints.Count; i++)
+        {
+            spiralShootPoints[i].GetComponent<EnemySpawnBulletSpiralPattern>().FireRateAdjust(newFireRate);
         }
     }
 }

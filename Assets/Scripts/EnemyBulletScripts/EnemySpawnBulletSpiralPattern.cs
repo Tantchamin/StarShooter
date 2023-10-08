@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemySpawnBulletSpiralPattern : MonoBehaviour
 {
-    public GameObject bullet;
-    public float fireRate = 0.2f;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private float fireRate = 0.2f;
 
-    public float angle = 0f;
-    public int anglePlus = 20;
+    [SerializeField] private float angle = 0f;
+    [SerializeField] private int anglePlus = 20;
 
     private Vector2 bulletMoveDirection;
 
@@ -36,5 +36,10 @@ public class EnemySpawnBulletSpiralPattern : MonoBehaviour
         {
             angle = 0;
         }
+    }
+
+    public void FireRateAdjust(float newFireRate)
+    {
+        fireRate = newFireRate;
     }
 }
