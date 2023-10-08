@@ -9,6 +9,7 @@ TagManager:
   - Missile
   - MainCanvas
   - Enemy
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
