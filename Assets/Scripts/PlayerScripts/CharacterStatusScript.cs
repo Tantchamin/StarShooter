@@ -59,6 +59,11 @@ public class CharacterStatusScript : MonoBehaviour
     public void HealthPointAdjust(float point)
     {
         healthPoint += point;
+        if(healthPoint > 3)
+        {
+            healthPoint = 3;
+        }
+
         if(point < 0)
         {
             hited.Play();
