@@ -11,6 +11,7 @@ public class CharacterStatusScript : MonoBehaviour
     [SerializeField] private float cardMaxValue = 10;
     [SerializeField] private float cardValue = 0;
     [SerializeField] private AudioSource hited;
+    [SerializeField] private AudioSource cardGaugeMaxSound;
 
     public void BulletDamageAdjust(float damage)
     {
@@ -39,6 +40,10 @@ public class CharacterStatusScript : MonoBehaviour
     public void CardValueAdjust(float amount)
     {
         cardValue += amount;
+        if(cardValue >= cardMaxValue)
+        {
+            cardGaugeMaxSound.Play();
+        }
     }
 
     public float GetBulletDamage()
