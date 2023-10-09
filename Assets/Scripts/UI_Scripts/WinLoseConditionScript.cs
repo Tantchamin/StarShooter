@@ -32,7 +32,7 @@ public class WinLoseConditionScript : MonoBehaviour
         }
         else if(_enemyStatusScript.GetHealthPoint() <= 0)
         {
-            loseUI.SetActive(true);
+            winUI.SetActive(true);
             _characterControlScript.enabled = false;
             Time.timeScale = 0;
         }

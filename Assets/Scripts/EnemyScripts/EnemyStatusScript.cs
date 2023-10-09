@@ -40,6 +40,10 @@ public class EnemyStatusScript : MonoBehaviour
             EnemyHealthAdjust(-other.GetComponent<BulletScript>().GetBulletDamage());
             Destroy(other.gameObject);
         }
+        else if (other.CompareTag("Player"))
+        {
+            other.GetComponent<CharacterStatusScript>().HealthPointAdjust(-3);
+        }
     }
 
     public float GetHealthPoint()

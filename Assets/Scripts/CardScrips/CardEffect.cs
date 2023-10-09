@@ -7,6 +7,7 @@ public class CardEffect : MonoBehaviour
     [SerializeField] private CharacterStatusScript characterStatusScript;
     [SerializeField] private GameObject barrier;
     [SerializeField] private float barrierTime = 5;
+    [SerializeField] private AudioSource shieldUp, shieldDown;
 
     private void Start()
     {
@@ -16,6 +17,7 @@ public class CardEffect : MonoBehaviour
     public void BarrierEffect()
     {
         barrier.SetActive(true);
+        shieldUp.Play();
         StartCoroutine(BarrierEndTime());
         characterStatusScript.CardValueAdjust(-characterStatusScript.GetCardMaxValue());
         Debug.Log("Barrier");
@@ -64,6 +66,7 @@ public class CardEffect : MonoBehaviour
     {
         yield return new WaitForSeconds(barrierTime);
         barrier.SetActive(false);
+        shieldDown.Play();
     }
 
 }

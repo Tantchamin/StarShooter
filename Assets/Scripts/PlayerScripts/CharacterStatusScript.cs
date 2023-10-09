@@ -10,6 +10,7 @@ public class CharacterStatusScript : MonoBehaviour
     [SerializeField] private float missileAmount = 3;
     [SerializeField] private float cardMaxValue = 10;
     [SerializeField] private float cardValue = 0;
+    [SerializeField] private AudioSource hited;
 
     public void BulletDamageAdjust(float damage)
     {
@@ -58,6 +59,10 @@ public class CharacterStatusScript : MonoBehaviour
     public void HealthPointAdjust(float point)
     {
         healthPoint += point;
+        if(point < 0)
+        {
+            hited.Play();
+        }
     }
 
     public float GetHealthPoint()
