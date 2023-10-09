@@ -10,9 +10,14 @@ public class SceneManagerScript : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void PlayScene()
+    public void TutorialScene()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void PlayScene()
+    {
+        SceneManager.LoadScene(2);
     }
 
     public void Exit()
