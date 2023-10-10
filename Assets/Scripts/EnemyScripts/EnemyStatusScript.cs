@@ -7,19 +7,11 @@ public class EnemyStatusScript : MonoBehaviour
 {
     [SerializeField] private float healthPoint;
     [SerializeField] private float maxHealthPoint;
-    public Slider healthBar;
-    private Slider hpBar;
-
 
     // Start is called before the first frame update
     void Awake()
     {
-        GameObject canvas = GameObject.FindWithTag("MainCanvas");
         healthPoint = maxHealthPoint;
-        hpBar = Instantiate(healthBar, Vector3.zero, Quaternion.identity) as Slider;
-        hpBar.transform.SetParent(canvas.transform);
-        Vector3 hpBarPos = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1f, 0));
-        hpBar.transform.position = hpBarPos;
     }
 
     // Update is called once per frame
